@@ -3,4 +3,52 @@
   <groupId>com.jenkinsjar.test</groupId>
   <artifactId>JenkinsJarTestPipeline</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+   <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+    </dependencies>
+  
+  <!-- include below build tag to your existing pom.xml  --> 
+<build>
+ <plugins>
+     <plugin> 
+
+                <!-- Building an executable jar -->
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                  <archive>
+                    <manifest>
+
+                    <!-- give full qualified name of your main class-->
+                      <mainClass>com.jenkinsjar.test.JenkinsTest</mainClass>
+
+                    </manifest>
+                  </archive>
+                </configuration>
+    </plugin>
+ </plugins>
+</build>
+  
 </project>
